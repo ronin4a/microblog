@@ -10,3 +10,4 @@ Currently at: Part IX Pagination
 changelog:
 - updated index so displays POSTS_PER_PAGE (rather than followed_posts().all())
 - updated explore so displays POSTS_PER_PAGE (rather than all posts)
+- updated user/<username> pages so actual posts are displayed
