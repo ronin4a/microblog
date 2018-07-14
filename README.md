@@ -5,10 +5,10 @@ Ref: https://blog.miguelgrinberg.com/
 Working repo of my version (slightly tweaked) of this app; goal = to learn Flask
 and SQLAlchemy so I can properly contribute Flask projects.
 
-Currently at: Part IX Pagination
+Currently at: Part XII Dates and Times
 
 changelog:
-- added email infrastructure; haven't tested yet
+- updated htmls with bootstrap
 
 notes:
 - haven't gotten email server working; some code in place for this, but work is
