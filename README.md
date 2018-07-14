@@ -8,6 +8,8 @@ and SQLAlchemy so I can properly contribute Flask projects.
 Currently at: Part IX Pagination
 
 changelog:
-- updated index so displays POSTS_PER_PAGE (rather than followed_posts().all())
-- updated explore so displays POSTS_PER_PAGE (rather than all posts)
-- updated user/<username> pages so actual posts are displayed
+- added email infrastructure; haven't tested yet
+
+notes:
+- haven't gotten email server working; some code in place for this, but work is
+  pending
