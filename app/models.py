@@ -66,7 +66,7 @@ class User(UserMixin, db.Model):
                       algorithms=['HS256'])['reset_password']
     except:
       return
-  return User.query.get(id)
+    return User.query.get(id)
 
 class Post(db.Model):
   id = db.Column(db.Integer, primary_key=True)
