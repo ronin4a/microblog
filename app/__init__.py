@@ -28,6 +28,8 @@ def create_app(config_class=Config):
   login.init_app(app)
   mail.init_app(app)
   bootstrap.init_app(app)
+  app.elasticsearch = ElasticSearch([app.config['ELASTICSEARCH_URL']]) \
+      if app.config['ELASTICSEARCH_URL'] else None
 
   from app.errors import bp as errors_bp
   app.register_blueprint(errors_bp)
