@@ -3,7 +3,7 @@ from flask import current_app
 def add_to_index(index, model):
   if not current_app.elasticsearch:
     return
-  payload()
+  payload = {}
   for field in model.__searchable__:
     payload[field] = getattr(model, field)
   current_app.elasticsearch.index(index=index, doc_type=index, id=model.id,
@@ -17,10 +17,13 @@ def remove_from_index(index, model):
 def query_index(index, query, page, per_page):
   if not current_app.elasticsearch:
     return [], 0
+  print("\n\n\nQUERYING INDEX3 %s %s %s %s...\n\n\n" %(index, query, page, per_page))
+  input()
   search = current_app.elasticsearch.search(
       index=index, doc_type=index,
       body={'query': {'multi_match': {'query':query, 'fields': ['*']}},
             'from': (page - 1) * per_page, 'size':per_page})
+  print("\n\n\nQUERYING INDEX4...\n\n\n")
   ids = [int(hit['_id']) for hit in search['hits']['hits']]
   return ids, search['hits']['total']
 

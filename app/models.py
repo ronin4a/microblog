@@ -10,6 +10,7 @@ from app.search import add_to_index, remove_from_index, query_index
 class SearchableMixIn(object):
   @classmethod
   def search(cls, expression, page, per_page):
+    print("\n\n\nIN SEARCH\n\n\n")
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
     if total == 0:
       return cls.query.filter_by(id=0), 0
